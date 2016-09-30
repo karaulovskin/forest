@@ -1,0 +1,15 @@
+mixin nav(className, items, activeIndx)
+	nav(class= className)
+		ul(class= className + "__list")
+			each item, indx in items
+				li(class= className + "__item " + ((activeIndx == indx) ? className + '__item' + '_active' : ''))
+					a(href="#" class= className + "__link")= item
+
+//- nav.nav-author
+//-     ul.nav-author__list
+//-         li.nav-author__item
+//-             a(href="#").nav-author__link Мои работы
+//-         li.nav-author__item
+//-             a(href="#").nav-author__link Обо мне
+//-         li.nav-author__item
+//-             a(href="#").nav-author__link Блог 

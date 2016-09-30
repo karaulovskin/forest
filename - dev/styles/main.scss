@@ -1,0 +1,39 @@
+/* -------------- common colors -------------- */
+
+// $black: #333333;
+$yellow: #f0efe9;
+$white: #fcfcfc;
+$green: #00bfa5;
+$darkGreen: #009688;
+$grey: #455a64;
+$darkGrey: #373e42;
+$grey: #667880;
+
+/* --------- compass --------- */
+
+@import "compass";
+
+/* --------- normalize --------- */
+
+@import "_misc/normalize";
+
+/* -------- fonts ---------*/
+
+@import "_misc/_fonts";
+
+/* --------- mixins --------- */
+
+@import "_misc/mixins";
+
+/* --------- adjustment --------- */
+
+@import "_misc/adjustment";
+
+
+/* --------- sections --------- */
+
+@import "_sections/**/*";
+
+
+
+

@@ -1,0 +1,103 @@
+include _common/_mixins
+
+doctype html
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+html
+    head
+        meta(http-equiv = 'Content-Type', content = 'text/html; charset=utf-8')
+        meta(http-equiv='X-UA-Compatible', content="IE=edge,chrome=1")
+        title
+            block title
+
+        meta(name='viewport' content='width=device-width')
+        link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:100,400,600,700&subset=latin,cyrillic' media='screen, projection, print')
+        link(rel='stylesheet' type='text/css' href='css/main.css' media='screen, projection, print')
+        script(src='/js/_vendors/modernizr-2.6.2-respond-1.1.0.min.js')
+
+    body
+        <!--[if lt IE 8]>
+        <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http://browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p>
+        <![endif]-->
+
+        .wrapper.wrapper_login
+            //- header.header-login
+            //-     .container
+            //-         .login
+            //-             button.login__btn
+            //-                 | Авторизоваться
+            .window.window_author
+                .window__wrapper
+                    .author
+                        .author__avatar
+                            img.author__avatar-pic
+                        .author__name.window__title
+                            h1
+                                | Вячеслав Карауловский
+                        .author__desc
+                            p
+                                | Личный сайт веб разработчика
+                    .socials
+                        ul.socials__list
+                            - var socials = ['vk', 'gh', 'ln']
+                            each social in socials
+                                li.socials__item
+                                    a(href="#" class="socials__link socials__link_" + social)
+                    //- .socials
+                    //-     ul.socials__list
+                    //-         li.socials__item
+                    //-             a.socials__link.socials__link_vk
+                    //-         li.socials__item
+                    //-             a.socials__link.socials__link_gh
+                    //-         li.socials__item
+                    //-             a.socials__link.socials__link_in   
+
+                +nav('window-nav', ['Мои работы', 'Обо мне', 'Блог'])
+            .window.window_authorization
+                .window__wrapper
+                    .authorization
+                        .authorization__title.window__title
+                            h1 
+                                | Авторизуйтесь
+                        form.authorization-form
+                            .authorization-form__box
+                                .authorization-form__pic
+                                input(class="authorization-form__input" placeholder="Логин")
+                            .authorization-form__box
+                                .authorization-form__pic
+                                input(class="authorization-form__input" placeholder="Пароль")
+                            label.checkbox
+                                input(class="checkbox__input" type="checkbox")
+                                .checkbox__fake
+                                span.checkbox__text
+                                    | Я человек
+                            .cheked-robot
+                                | Вы точно не робот?
+                            label.checkbox.checkbox_margin-right
+                                input(class="checkbox__input" type="checkbox")
+                                .checkbox__fake.checkbox__fake_radio
+                                span.checkbox__text
+                                    | Да
+                            label.checkbox
+                                input(class="checkbox__input" type="checkbox")
+                                .checkbox__fake.checkbox__fake_radio
+                                span.checkbox__text
+                                    | Не уверен
+
+                +nav('authorization-nav', ['На главную', 'Войти'])
+
+
+            //- footer.footer-login
+            //-     .copyright
+            //-         | © Карауловский Вячеслав | создано с любовью в LoftSchool | 2016
+
+
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+        script.
+            window.jQuery || document.write('<script src="/js/_vendors/jquery-1.11.3.min.js"><\/script>');
+            
+        script(src='js/plugins.min.js')
+        script(src='js/main.min.js')
+

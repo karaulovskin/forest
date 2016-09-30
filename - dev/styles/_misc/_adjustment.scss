@@ -1,0 +1,97 @@
+/* --------- adjustment --------- */
+
+$container-width: 1200px;
+$footer-login: 70px;
+$body-font: 'Open Sans', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	width:100%;
+}
+
+body {
+	font: 16px/1.41 $body-font;
+    -webkit-font-smoothing: antialiased;
+	width:100%;
+	height:100% !important;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none outside none;
+
+	li {
+		padding: 0;
+		left: 0;
+	}
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+input {
+	border: none;
+	padding: 15px 20px;
+	outline: none;
+}
+
+footer {
+	min-width: $container-width + 10;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
+	min-width: $container-width + 10px;
+	overflow: hidden;
+
+	&:after {
+		content: "";
+		display: block;
+		height: $footer-login;
+	}
+}
+
+.wrapper_login {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	min-width: 400px;
+	background: url(../img/bg.jpg) no-repeat center top;
+	background-size: cover;
+
+	&:before {
+		content: "";
+		height: 100%;
+		width: 0;
+		@include inlineblock(middle)
+	}
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+    padding: 0 15px;
+    width: $container-width;
+	@include clearfix;
+}
