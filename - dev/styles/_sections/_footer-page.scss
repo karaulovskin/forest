@@ -1,0 +1,116 @@
+.footer-page {
+	// position: absolute;
+	// bottom: 0;
+	// left: 0;
+	// right: 0;
+	background: rgba(55, 62, 66, .85);
+}
+
+.footer-page__top {
+	padding: 15px 30px;
+	font-size: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer-page__part {
+	width: 50%;
+	font-size: 16px;
+	@include inlineblock(middle);
+}
+
+.footer-page__part_nav {
+	width: 80%;
+}
+
+.footer-page__part_socials {
+	width: 20%;
+	text-align: right;
+}
+
+.footer-nav {
+	font-size: 0;
+}
+
+.footer-nav__list {
+	font-size: 16px;
+}
+
+.footer-nav__item {
+    margin-right: 40px;
+	@include inlineblock(middle);
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.footer-nav__link {
+	color: rgba(255, 255, 255, 1);
+	@include transition(.3s);
+
+	&:hover {
+		color: $green;
+	}
+}
+
+.socials_round {
+	// margin: 0 0 30px;
+}
+
+.socials__item_round {
+	width: 50px;
+	height: 50px;
+    margin-right: 25px;
+	@include inlineblock(middle);
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+}
+
+.socials__link_round {
+	display: block;
+	text-indent: -9999px;
+	height: 100%;
+	width: 100%;
+	opacity: .5;
+	@include transition(.3s);
+}
+
+@each $social in (vk, gh, ln) {
+	.socials__link_round_#{$social} {
+		background: url('../img/svg/#{$social}_round.svg') no-repeat;
+		
+		&:hover {
+			// background: url('../img/footer/icons/#{$social}-hover.png') 0 0 no-repeat;
+			opacity: 1;
+		}
+	}
+}
+
+.socials__link_vk {
+	background-position: 0 5px;
+}
+
+.socials__link_gh {
+	background-position: 0 4px;
+}
+
+.socials__link_ln {
+	background-position: 0 0;
+}
+
+.footer-page__bottom {
+	padding: 15px 30px;
+	color: rgba(255, 255, 255, .5);
+	font-size: 0;
+}
+
+.footer-page__desc {
+	max-width: 515px;
+}
+
+.copyright {
+	text-align: right;
+}

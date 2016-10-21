@@ -45,7 +45,8 @@ a {
 	text-decoration: none;
 }
 
-input {
+input,
+textarea {
 	border: none;
 	padding: 15px 20px;
 	outline: none;
@@ -59,14 +60,8 @@ footer {
     position: relative;
     min-height: 100%;
     height: auto !important;
-	min-width: $container-width + 10px;
+	min-width: 320px;
 	overflow: hidden;
-
-	&:after {
-		content: "";
-		display: block;
-		height: $footer-login;
-	}
 }
 
 .wrapper_login {
@@ -84,7 +79,7 @@ footer {
 		content: "";
 		height: 100%;
 		width: 0;
-		@include inlineblock(middle)
+		@include inline-block(middle);
 	}
 }
 
@@ -94,4 +89,18 @@ footer {
     padding: 0 15px;
     width: $container-width;
 	@include clearfix;
+}
+
+.container-big {
+	margin: 0 auto;
+    position: relative;
+    width: $container-width;
+	@include clearfix;
+}
+
+.section__title {
+	font-size: 63px;
+	color: $grey;
+	text-align: center;
+	@include bernier_regular();
 }

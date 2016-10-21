@@ -1,0 +1,79 @@
+extends ../main-page
+
+block title
+    | Мои работы
+block content
+    section.section.section_works-me
+        .section__title.section__title_works-me
+            | Мои работы
+    section.section.section_slider
+        .slider
+            .slider__desc
+                .slider__desc-content
+                    .slider__title
+                        h3 
+                            | Сайт школы онлайн образования
+                    .slider__skills
+                        span
+                            | HTML, CSS, JavaScript
+                    a(class="slider__link" href="#")
+                        img(class="slider__link-img" src="../img/svg/link.svg")
+                        span.slider__link-desc
+                            | Посмотреть сайт
+            .slider__view
+                ul.slider__slides.slides
+                    li.slides__item.slides__item--active  
+                        img(src="../img/aboute-me/work-1.png" alt="")
+                    li.slides__item
+                        img(src="../img/aboute-me/work-2.png" alt="")
+                    li.slides__item
+                        img(src="../img/aboute-me/work-3.png" alt="")
+            .slider__controls
+                a(class="slider__control slider__control--prev" href="#" title="Предыдущий проект")
+                a(class="slider__control slider__control--next" href="#" title="Следующий проект")
+    section.section.section_about-me
+        .section__title.section__title_about-me
+            | Что обо мне говорят
+        .review
+            ul.review__list
+                li.review__item
+                    .review__desc
+                        p.review__text
+                            | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелыхиспытаний и бессонных ночей!
+                    .review__author
+                        .review__author-avatar
+                            img(class="review__author-pic" src="../img/aboute-me/review__author-1.jpg")
+                        .review__author-content
+                            .review__author-name
+                                span
+                                    | Дмитрий Ковальчук
+                            .review__author-desc
+                                span
+                                    | Основатель LoftSchool
+                li.review__item
+                    .review__desc
+                        p.review__text
+                            | Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на самых старых браузерах!
+                    .review__author
+                        .review__author-avatar
+                            img(class="review__author-pic" src="../img/aboute-me/review__author-2.jpg")
+                        .review__author-content
+                            .review__author-name
+                                span
+                                    | Зар Захаров
+                            .review__author-desc
+                                span
+                                    | Преподаватель LoftSchool
+
+        .window.window_contact
+            .window__wrapper.window__wrapper_contact
+                .contact
+                    .contact__title.window__title
+                        h1 
+                            | Связаться со мной
+                    form.contact-form
+                        input(class="contact-form__input" placeholder="Имя")
+                        input(class="contact-form__input" placeholder="Email")
+                        textarea(class="contact-form__textarea" placeholder="Ваше сообщение")
+            +nav('authorization-nav', ['Отправить', 'Очистить'])
+        include ../_common/_footer

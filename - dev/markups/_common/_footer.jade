@@ -1,0 +1,18 @@
+footer.footer-page
+    .footer-page__top
+        .footer-page__part.footer-page__part_nav
+            +nav('footer-nav', ['Мои работы', 'Обо мне', 'Блог', 'Авторизация'])
+        .footer-page__part.footer-page__part_socials
+            .socials_round
+                ul.socials__list_round
+                    - var socials = ['vk', 'gh', 'ln']
+                    each social in socials
+                        li.socials__item_round
+                            a(href="#" class="socials__link_round socials__link_round_" + social)
+    .footer-page__bottom
+        .footer-page__part
+            .footer-page__desc
+                | Я веб-разработчик из Челябинска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+        .footer-page__part
+            .copyright
+                | © Карауловский Вячеслав | создано с любовью в LoftSchool | 2016

@@ -67,7 +67,7 @@
 }
 
 .author__desc {
-	p {
+	span {
 		color: $grey;
 	}
 }
@@ -94,12 +94,12 @@
 	height: 100%;
 	width: 100%;
 	opacity: .5;
-	@include transition(.5s);
+	@include transition(.3s);
 }
 
 @each $social in (vk, gh, ln) {
 	.socials__link_#{$social} {
-		background: url('../img/socials/#{$social}.png') no-repeat;
+		background: url('../img/svg/#{$social}.svg') no-repeat;
 		
 		&:hover {
 			// background: url('../img/footer/icons/#{$social}-hover.png') 0 0 no-repeat;
@@ -117,12 +117,7 @@
 }
 
 .socials__link_ln {
-	background-position: 0 2px;
-}
-
-.window-nav,
-.authorization-nav {
-	font-size: 0;
+	background-position: 0 0;
 }
 
 .window-nav__list,
@@ -157,7 +152,7 @@
 	color: #fff;
 	background: rgba(0, 191, 165, .85);
 	// opacity: 0.85;
-	@include transition(.5s);
+	@include transition(.3s);
 
 	&:hover {
 		// background: $darkGreen;
@@ -166,6 +161,7 @@
 }
 
 .authorization-form__box {
+	position: relative;
 	height: 45px;
 	width: 340px;
 	margin-bottom: 20px;
@@ -181,13 +177,41 @@
 
 .authorization-form__pic {
 	height: 100%;
-	width: 15%;
+	width: 14%;
 	background: $yellow;
+}
+
+.authorization-form__pic_login {
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 14px;
+		left: 14px;
+		width: 20px;
+		height: 20px;
+		background: url(../img/svg/login.svg) no-repeat;
+	}
+}
+
+.authorization-form__pic_password {
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 14px;
+		left: 14px;
+		width: 20px;
+		height: 20px;
+		background: url(../img/svg/password.svg) no-repeat;
+	}
 }
 
 .authorization-form__input {
 	height: 100%;
-	width: 85%;
+	width: 86%;
 	font-size: 16px;
 	color: $darkGrey;
 }
@@ -223,6 +247,18 @@
 	}
 }
 
+.checkbox__input:checked + .checkbox__fake_radio {
+
+	&.checkbox__fake {
+	    background: #fff;
+	    border: 1px solid #ccc;
+	}
+
+	&:before {
+		display: block;
+	}
+}
+
 .checkbox__fake {
 	position: relative;
 	@include inlineblock(middle);
@@ -237,16 +273,26 @@
 		content: "";
 		display: none;
 		position: absolute;
-		top: 6px;
-		left: 5px;
-		width: 14px;
-		height: 14px;
-		background: url(../img/decor/cheked.png) no-repeat;
+		top: 3px;
+		left: 1px;
+		width: 20px;
+		height: 20px;
+		background: url(../img/svg/check.svg) no-repeat;
 	}
 }
 
 .checkbox__fake_radio {
+	background: rgb(255, 255, 255);
 	@include border-radius(50%);
+
+	&:before {
+		top: 5px;
+		left: 5px;
+		width: 8px;
+		height: 8px;
+		background: $green;
+		@include border-radius(50%);
+	}
 }
 
 .checkbox__text {
@@ -266,10 +312,4 @@
 	width: 100%;
 	height: $footer-login;
 	margin-top: -$footer-login;
-}
-
-.copyright {
-	font-size: 16px;
-	color: #fff;
-	text-align: center;
 }

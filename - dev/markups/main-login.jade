@@ -37,7 +37,7 @@ html
                             h1
                                 | Вячеслав Карауловский
                         .author__desc
-                            p
+                            span
                                 | Личный сайт веб разработчика
                     .socials
                         ul.socials__list
@@ -53,7 +53,6 @@ html
                     //-             a.socials__link.socials__link_gh
                     //-         li.socials__item
                     //-             a.socials__link.socials__link_in   
-
                 +nav('window-nav', ['Мои работы', 'Обо мне', 'Блог'])
             .window.window_authorization
                 .window__wrapper
@@ -63,10 +62,10 @@ html
                                 | Авторизуйтесь
                         form.authorization-form
                             .authorization-form__box
-                                .authorization-form__pic
+                                .authorization-form__pic.authorization-form__pic_login
                                 input(class="authorization-form__input" placeholder="Логин")
                             .authorization-form__box
-                                .authorization-form__pic
+                                .authorization-form__pic.authorization-form__pic_password
                                 input(class="authorization-form__input" placeholder="Пароль")
                             label.checkbox
                                 input(class="checkbox__input" type="checkbox")
@@ -85,7 +84,6 @@ html
                                 .checkbox__fake.checkbox__fake_radio
                                 span.checkbox__text
                                     | Не уверен
-
                 +nav('authorization-nav', ['На главную', 'Войти'])
 
 

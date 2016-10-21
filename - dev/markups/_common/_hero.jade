@@ -1,0 +1,24 @@
+section.hero
+    header.header
+        .container-big
+            .header__socials
+                .socials
+                    ul.socials__list
+                        - var socials = ['vk', 'gh', 'ln']
+                        each social in socials
+                            li.socials__item
+                                a(href="#" class="socials__link socials__link_" + social)
+            .header__menu
+                nav.nav
+                    .nav__trigger
+                        img(class="nav__pic" src="../img/svg/hamburger.svg")
+    .author.author_hero
+        .author__avatar.author__avatar_hero
+            img.author__avatar-pic.author__avatar-pic_hero
+        .author__name.author__name_hero.window__title
+            h1
+                | Вячеслав Карауловский
+        .author__desc.author__desc_hero
+            span
+                | Личный сайт веб разработчика
+    .hero__arrow

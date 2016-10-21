@@ -32,7 +32,11 @@ $grey: #667880;
 
 /* --------- sections --------- */
 
-@import "_sections/**/*";
+@import "_sections/_welcome";
+@import "_sections/_hero";
+@import "_sections/_about-me";
+@import "_sections/_slider";
+@import "_sections/_footer-page";
 
 
 
